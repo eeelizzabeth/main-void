@@ -1,0 +1,14 @@
+#about-mainframe {
+    padding: 15px;
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+
+}
+
+#about-content {
+    margin-right: 30px;
+}
+#image-content {
+    width: 300px;
+}

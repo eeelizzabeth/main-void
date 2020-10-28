@@ -1,0 +1,18 @@
+body {
+    /* background-color: rgb(147, 158, 175); */
+    /* width: 1000px; */
+    /* height: 700px; */
+}
+.navigation-frame {
+    padding: 15px;
+}
+#log-in {
+    float: right;
+}
+#nav-brand-frame {
+    background-color: rgb(85, 83, 92);
+    /* background-color: rgb(23, 126,  137); */
+}
+#about-container {
+    padding: 40px;
+}
