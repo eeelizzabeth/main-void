@@ -5,91 +5,97 @@
         <div class="form-row">
             <div class="form-group col">
                 <label>Title</label>
-                <!-- [ngClass]="{ 'is-invalid': submitted && f.title.errors }" -->
-                <select formControlName="title" class="form-control" >
+                
+                <select [ngClass]="{ 'is-invalid': submitted && f.title.errors }" formControlName="title" class="form-control" >
                     <option value=""></option>
                     <option value="Mr">Mr</option>
                     <option value="Mrs">Mrs</option>
                     <option value="Miss">Miss</option>
                     <option value="Ms">Ms</option>
                 </select>
-                <!-- *ngIf="submitted && f.title.errors" -->
-                <div  class="invalid-feedback">
-                    <!-- *ngIf="f.title.errors.required" -->
-                    <div >Title is required</div>
+                
+                <div  *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                    <div *ngIf="f.title.errors.required">Title is required</div>
                 </div>
             </div>
             <div class="form-group col-5">
                 <label>First Name</label>
-                <!-- [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" -->
-                <input type="text" formControlName="firstName" class="form-control"  />
-                <!-- *ngIf="submitted && f.firstName.errors" -->
-                <div  class="invalid-feedback">
-                    <!-- *ngIf="f.firstName.errors.required" -->
-                    <div >First Name is required</div>
+                <input type="text" formControlName="firstName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"/>
+                
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
                 </div>
             </div>
             <div class="form-group col-5">
                 <label>Last Name</label>
-                <!-- [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" -->
-                <input type="text" formControlName="lastName" class="form-control"  />
-                <!-- *ngIf="submitted && f.lastName.errors" -->
-                <div  class="invalid-feedback">
-                    <!-- *ngIf="f.lastName.errors.required" -->
-                    <div >Last Name is required</div>
+                
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                 </div>
             </div>
         </div>
         <div class="form-group">
+            <label >Address</label>
+            <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+            <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                    
+                <div *ngIf="f.address.errors.required">Address is required</div>
+            </div>
+        </div>
+        <div class="form-group">
             <label>Email</label>
-            <!-- [ngClass]="{ 'is-invalid': submitted && f.email.errors }" -->
-            <input type="text" formControlName="email" class="form-control"  />
-            <!-- *ngIf="submitted && f.email.errors" -->
-            <div  class="invalid-feedback">
-                <!-- *ngIf="f.email.errors.required" -->
-                <div >Email is required</div>
-                <!-- *ngIf="f.email.errors.email" -->
-                <div >Email must be a valid email address</div>
+            
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col">
                 <label>Password</label>
-                <!-- [ngClass]="{ 'is-invalid': submitted && f.password.errors }" -->
-                <input type="password" formControlName="password" class="form-control"  />
-                <!-- *ngIf="submitted && f.password.errors" -->
-                <div  class="invalid-feedback">
-                    <!-- *ngIf="f.password.errors.required" -->
-                    <div >Password is required</div>
-                    <!-- *ngIf="f.password.errors.minlength" -->
-                    <div >Password must be at least 6 characters</div>
+                
+                <input type="password" formControlName="password" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
                 </div>
             </div>
             <div class="form-group col">
                 <label>Confirm Password</label>
-                <!-- [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" -->
-                <input type="password" formControlName="confirmPassword" class="form-control"  />
-                <!-- *ngIf="submitted && f.confirmPassword.errors" -->
-                <div  class="invalid-feedback">
-                    <!-- *ngIf="f.confirmPassword.errors.required" -->
-                    <div >Confirm Password is required</div>
-                    <!-- *ngIf="f.confirmPassword.errors.mustMatch" -->
-                    <div >Passwords must match</div>
+    
+                <input type="password" formControlName="confirmPassword" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"/>
+                
+                <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                    
+                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                    
+                    <div *ngIf="f.confirmPassword.errors.misMatch">Passwords must match</div>
                 </div>
             </div>
         </div>
         <div class="form-group form-check">
-            <!-- [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" -->
-            <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"  />
+            
+            <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }"/>
             <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
-            <!-- *ngIf="submitted && f.acceptTerms.errors" -->
-            <div  class="invalid-feedback">Accept Ts & Cs is required</div>
+            
+            <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
         </div>
         <div class="form-group">
-            <!-- [disabled]="loading" -->
-            <button  class="btn btn-primary">
-                <!-- *ngIf="loading" -->
-                <span  class="spinner-border spinner-border-sm mr-1"></span>
+            
+            <button [disabled]="loading" class="btn btn-primary">
+                
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                 Register
             </button>
             <a routerLink="/log-in" href="" class="btn btn-link">Cancel</a>
